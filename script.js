@@ -4,7 +4,7 @@ const btnAnterior = document.getElementById('btn-anterior');
 const btnProximo = document.getElementById('btn-proximo');
 
 let imagens = [];
-for (let i = 1; i <= 18; i++) {
+for (let i = 1; i <= 17; i++) {
     imagens.push(`foto${i}.jpeg`);
 }
 

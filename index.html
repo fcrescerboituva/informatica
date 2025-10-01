@@ -8,17 +8,19 @@
    
 </head>
 <body>
-  <header class="header-estilizado">
-    <div class="container">
-      <img src="logos.png" alt="Imagem sobre bullying" class="imagem">
-      
-      <div class="texto">
-        <h1 class="texto-estilizado">Bullying: Um Problema Real</h1>
-        <h3 class="texto-estilizado">Projeto de Informática sobre o Bullying - FCC e PUFV 2025</h3>
-        <h3 class="texto-estilizado">Entenda os efeitos e como combater o bullying.</h3>
-      </div>
+<header class="header-estilizado">
+  <div class="container">
+    <img src="logos.png" alt="Imagem sobre bullying" class="imagem">
+    
+    <img src="voador.png" class="voador" alt="Imagem voadora">
+
+    <div class="texto">
+      <h1 class="texto-estilizado">Bullying: Um Problema Real</h1>
+      <h3 class="texto-estilizado">Projeto de Informática sobre o Bullying - FCC e PUFV 2025</h3>
+      <h3 class="texto-estilizado">Entenda os efeitos e como combater o bullying.</h3>
     </div>
-  </header>
+  </div>
+</header>
 <style>
   * {
     margin: 0;
@@ -31,6 +33,15 @@
     background-color: #f4f4f4;
     color: #222;
   }
+
+.voador {
+  position: absolute;
+  width: 100px; /* ajuste conforme necessário */
+  height: auto;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform 2s linear;
+}
 
   .header-estilizado {
     background: linear-gradient(to right, #ffffff, #ffffff); /* azul -> roxo */
@@ -346,5 +357,23 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+  const voador = document.querySelector('.voador');
+
+  function voarAleatoriamente() {
+    const larguraJanela = window.innerWidth;
+    const alturaJanela = window.innerHeight;
+
+    const x = Math.random() * (larguraJanela - 100); // largura menos o tamanho da imagem
+    const y = Math.random() * (alturaJanela - 100);
+
+    voador.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  // Move a imagem a cada 2 segundos
+  setInterval(voarAleatoriamente, 2000);
+</script>
+
 </body>
 </html>

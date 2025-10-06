@@ -22,6 +22,10 @@
   </div>
 </header>
 <style>
+
+
+
+  
   * {
     margin: 0;
     padding: 0;
@@ -40,7 +44,7 @@
   height: auto;
   z-index: 9999;
   pointer-events: none;
-  transition: transform 2s linear;
+  transition: transform 3s linear;
 }
 
   .header-estilizado {
@@ -55,15 +59,22 @@
     padding: 1rem;
   }
 
-  .imagem {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
-    border-style:dashed;
-    border-color: #058bf9;
-  }
+.imagem {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+  border-style: dashed;
+  border-color: #058bf9;
+  animation: piscarImagem 2s ease-in-out infinite;
+}
+
+/* Animação de piscar suave */
+@keyframes piscarImagem {
+  40%, 100% { opacity: 1; }
+  60% { opacity: 0.5; }
+}
 
   .imagem:hover {
     transform: scale(1.03);

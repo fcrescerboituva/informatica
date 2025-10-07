@@ -10,9 +10,10 @@
 <body>
 <header class="header-estilizado">
   <div class="container">
-    <img src="logos.png" alt="Imagem sobre bullying" class="imagem">
     
+    <img src="logos.png" alt="Imagem sobre bullying" class="imagem">
     <img src="voador.png" class="voador" alt="Imagem voadora">
+  
 
     <div class="texto">
       <h1 class="texto-estilizado">Bullying: Um Problema Real</h1>
@@ -20,6 +21,7 @@
       <h3 class="texto-estilizado">Entenda os efeitos e como combater o bullying.</h3>
     </div>
   </div>
+    
 </header>
 <style>
 
@@ -115,6 +117,7 @@
       <img src="bullying logo.png" alt="Logo Bullying">
 <div class="texto" style="text-align: justify;">
   <h2>O que é Bullying?</h2>
+  
   <p>
     Bullying é um comportamento agressivo e repetitivo que pode causar danos físicos e emocionais às vítimas.
     Pode acontecer em escolas, ambientes de trabalho e até mesmo online.
@@ -217,64 +220,94 @@
         <br>
         <li>Palestra da advogada Marcela Patekoski Santana Cardoso</a></li><p>
         A Advogada Marcela abordou pontos importantes sobre o bullying e suas consequencias<br><p></p><br>
-          <style>
-        /* Estilo geral das miniaturas */
-        .miniaturas-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
+     <style>
+    /* Estilo geral das miniaturas */
+    .miniaturas-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
 
+    .miniatura {
+        width: 100px;
+        height: 75px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .miniatura:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    /* Estilo do Modal */
+    .modal {
+        display: none; /* Inicialmente oculto */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .modal-conteudo {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .modal img {
+        max-width: 100%;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        margin: auto;
+        display: block;
+        border-radius: 8px;
+    }
+
+    .fechar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 600px) {
         .miniatura {
-            width: 100px;
-            height: 75px;
-            cursor: pointer;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .miniatura:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-
-        /* Estilo do Modal */
-        .modal {
-            display: none; /* Inicialmente oculto */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-conteudo {
-            position: relative;
-            max-width: 90%;
-            max-height: 80%;
-        }
-
-        .modal img {
-            width: 100%;
-            height: auto;
+            width: 80px;
+            height: 60px;
         }
 
         .fechar {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
+            font-size: 24px;
+            top: 5px;
+            right: 5px;
         }
 
-      
-    </style>
+        .modal img {
+            max-height: 80vh;
+        }
+    }
+</style>
+
 </head>
 <body>
 

@@ -49,6 +49,32 @@
   transition: transform 3s linear;
 }
 
+.rastro {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 9998;
+  animation: desaparecer 2s forwards;
+}
+
+.rastro {
+  filter: drop-shadow(0 0 10px #f3c305ff);
+}
+
+@keyframes desaparecer {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+
   .header-estilizado {
     background: linear-gradient(to right, #ffffff, #ffffff); /* azul -> roxo */
     padding: 2rem 1rem;
@@ -92,6 +118,7 @@
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   }
 
+  
 @media (max-width: 768px) {
   .texto h1 {
     font-size: 1.7rem;
@@ -402,21 +429,39 @@
 
   <script src="script.js"></script>
 
-  <script>
-  const voador = document.querySelector('.voador');
+ <script>
+const voador = document.querySelector('.voador');
 
-  function voarAleatoriamente() {
-    const larguraJanela = window.innerWidth;
-    const alturaJanela = window.innerHeight;
+function criarRastro(x, y) {
+  const rastro = document.createElement('img');
+  rastro.src = voador.src;
+  rastro.className = 'rastro';
+  rastro.style.left = `${x}px`;
+  rastro.style.top = `${y}px`;
+  document.body.appendChild(rastro);
 
-    const x = Math.random() * (larguraJanela - 100); // largura menos o tamanho da imagem
-    const y = Math.random() * (alturaJanela - 100);
+  // Remove o rastro após a animação terminar
+  setTimeout(() => {
+    rastro.remove();
+  }, 1000);
+}
 
-    voador.style.transform = `translate(${x}px, ${y}px)`;
-  }
+function voarAleatoriamente() {
+  const larguraJanela = window.innerWidth;
+  const alturaJanela = window.innerHeight;
 
-  // Move a imagem a cada 2 segundos
-  setInterval(voarAleatoriamente, 2000);
+  const x = Math.random() * (larguraJanela - 100);
+  const y = Math.random() * (alturaJanela - 100);
+
+  // Captura a posição atual do GIF antes de mover
+  const rect = voador.getBoundingClientRect();
+  criarRastro(rect.left, rect.top);
+
+  voador.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+// Move a imagem a cada 2 segundos
+setInterval(voarAleatoriamente, 2000);
 </script>
 
 </body>

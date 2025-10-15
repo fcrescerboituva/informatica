@@ -37,15 +37,37 @@ body {
 }
 
 .header-estilizado {
-    border: 6px solid #055fc5;
-    border-radius: 22px;
+ border: 9px dashed #055fc5;
+border-radius: 22px;
+
+/* Sombra estilo neomórfico afundado */
+box-shadow:
+  inset 12px 8px 16px rgba(0, 0, 0, 0.15),   /* sombra interna escura */
+  inset -12px -8px 16px rgba(255, 255, 255, 0.7); /* luz interna clara */
+
+
     padding: 20px;
     margin: 20px auto;
     background: linear-gradient(135deg, #ffffff, #f0f8ff);
     max-width: 1200px;
 
-    /* Animação de piscar mais suave */
-    animation: piscarEmpolgante 2s infinite ease-in-out;
+    /* Animação da borda */
+    animation: piscarEmpolgante 1.4s infinite ease-in-out;
+}
+
+@keyframes piscarEmpolgante {
+    0% {
+        border-color: #055fc5; 
+    }
+    33% {
+        border-color: #46b2fa; 
+    }
+    66% {
+        border-color: #055fc5;
+    }
+    100% {
+        border-color: #055fc5;
+    }
 }
 
 

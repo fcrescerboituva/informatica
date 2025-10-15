@@ -12,7 +12,7 @@
   <div class="container">
     
     <img src="logos.png" alt="Imagem sobre bullying" class="imagem">
-    <img src="voadora.gif" class="voador" alt="Imagem voadora">
+    <img src="voadora.gif" class="voador" id="imagemvoadora" alt="Imagem voadora">
   
 
     <div class="texto">
@@ -42,12 +42,13 @@
 
 .voador {
   position: absolute;
-  width: 100px; /* ajuste conforme necessário */
+  width: 100px;
   height: auto;
   z-index: 9999;
-  pointer-events: none;
+  pointer-events: auto; /* <- alterado de none para auto */
   transition: transform 3s linear;
 }
+
 
 .rastro {
   position: absolute;
@@ -74,7 +75,32 @@
   }
 }
 
+ #modalAlerta {
+    display: none; /* fica escondido até ser ativado */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
 
+  #modalAlerta .conteudo {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+
+  #modalAlerta h2 {
+    margin-top: 0;
+  }
+
+  #modalAlerta button {
+    margin-top: 15px;
+    padding: 8px 16px;
+  }
   .header-estilizado {
     background: linear-gradient(to right, #ffffff, #ffffff); /* azul -> roxo */
     padding: 2rem 1rem;
@@ -459,6 +485,35 @@
   <script src="script.js"></script>
 
  <script>
+
+  const imagem = document.getElementById('voador');
+
+window.addEventListener('DOMContentLoaded', function () {
+  const imagem = document.getElementById('imagemvoadora');
+  let contadorCliques = 0;
+
+  if (imagem) {
+    imagem.addEventListener('click', function () {
+      contadorCliques++;
+
+      if (contadorCliques === 1) {
+        alert('Oi, tudo bem? Eu sou a simpática abelhinha do Programa A União Faz a Vida.');
+      } else if (contadorCliques === 2) {
+        alert('Seja bem vindo ao nosso site!!!');
+      } else if (contadorCliques === 3) {
+        alert('Que legal te conhecer! Boa navegação pelo site!!!');
+      } else {
+        // Para cliques além do terceiro, repetir a última mensagem
+        alert('Que legal te conhecer! Boa navegação pelo site!!!');
+      }
+    });
+  } else {
+    console.log("Imagem com ID 'imagemvoadora' não foi encontrada.");
+  }
+});
+
+
+
 const voador = document.querySelector('.voador');
 
   function criarRastro(x, y) {
@@ -497,6 +552,8 @@ function voarAleatoriamente() {
 
 // Move a imagem a cada 2 segundos
 setInterval(voarAleatoriamente, 2000);
+
+
 </script>
 
 </body>

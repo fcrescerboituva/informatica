@@ -53,10 +53,10 @@
   position: absolute;
   width: 100px;
   height: auto;
-  opacity: 0.5;
+  opacity: 0.1;
   pointer-events: none;
   z-index: 9998;
-  animation: desaparecer 2s forwards;
+  animation: desaparecer 0.0s forwards;
 }
 
 .rastro {
@@ -461,7 +461,7 @@
  <script>
 const voador = document.querySelector('.voador');
 
-function criarRastro(x, y) {
+  function criarRastro(x, y) {
   const rastro = document.createElement('img');
   rastro.src = voador.src;
   rastro.className = 'rastro';
@@ -469,11 +469,17 @@ function criarRastro(x, y) {
   rastro.style.top = `${y}px`;
   document.body.appendChild(rastro);
 
-  // Remove o rastro após a animação terminar
+  // Adiciona a classe que ativa o fade-out na próxima renderização
+  requestAnimationFrame(() => {
+    rastro.classList.add('fade-out');
+  });
+
+  // Remove o rastro após a animação (mesmo tempo do transition no CSS)
   setTimeout(() => {
     rastro.remove();
   }, 1000);
 }
+
 
 function voarAleatoriamente() {
   const larguraJanela = window.innerWidth;

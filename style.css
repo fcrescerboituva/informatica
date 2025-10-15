@@ -24,29 +24,30 @@ body {
 
 
 @keyframes piscarEmpolgante {
-    30%, 100% {
+    20%, 100% {
         opacity: 1;
-        box-shadow: 0 8px 25px rgba(1, 19, 64, 0.8);
+        box-shadow: 0 4px 12px rgba(1, 19, 64, 0.2);
         filter: brightness(1);
     }
     60% {
-        opacity: 0.9;
-        box-shadow: 0 10px 35px rgb(1, 11, 84); /* sombra mais escura e intensa */
-        filter: brightness(1.2); /* brilho levemente aumentado */
+        opacity: 0.90;
+        box-shadow: 0 10px 22px rgba(1, 19, 64, 0.3);
+        filter: brightness(1.2);
     }
 }
 
 .header-estilizado {
-    border: 6px solid #055fc5; /* Cor azul suave */
-    border-radius: 22px;        /* Cantos arredondados */
-    padding: 20px;              /* Espaçamento interno */
-    margin: 20px auto;          /* Espaço externo */
-    background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Fundo suave */
-    max-width: 1200px;          /* Limita largura em telas maiores */
+    border: 6px solid #055fc5;
+    border-radius: 22px;
+    padding: 20px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    max-width: 1200px;
 
-    /* Animação de piscar com brilho e sombra */
+    /* Animação de piscar mais suave */
     animation: piscarEmpolgante 2s infinite ease-in-out;
 }
+
 
 
 

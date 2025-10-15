@@ -23,16 +23,31 @@ body {
 }
 
 
+@keyframes piscarEmpolgante {
+    30%, 100% {
+        opacity: 1;
+        box-shadow: 0 8px 25px rgba(1, 19, 64, 0.8);
+        filter: brightness(1);
+    }
+    60% {
+        opacity: 0.9;
+        box-shadow: 0 10px 35px rgb(1, 11, 84); /* sombra mais escura e intensa */
+        filter: brightness(1.2); /* brilho levemente aumentado */
+    }
+}
+
 .header-estilizado {
-    border: 5px solid #4A90E2; /* Cor azul suave */
+    border: 6px solid #055fc5; /* Cor azul suave */
     border-radius: 22px;        /* Cantos arredondados */
     padding: 20px;              /* Espaçamento interno */
     margin: 20px auto;          /* Espaço externo */
-    box-shadow: 0 8px 25px rgba(1, 19, 64, 0.8); /* Sombra externa */
     background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Fundo suave */
     max-width: 1200px;          /* Limita largura em telas maiores */
-    
+
+    /* Animação de piscar com brilho e sombra */
+    animation: piscarEmpolgante 2s infinite ease-in-out;
 }
+
 
 
 

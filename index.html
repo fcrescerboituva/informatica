@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bullying: Um Problema Real</title>
   <link rel="stylesheet" href="style.css">
-   
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 <header class="header-estilizado">
@@ -492,21 +493,21 @@ window.addEventListener('DOMContentLoaded', function () {
   const imagem = document.getElementById('imagemvoadora');
   let contadorCliques = 0;
 
-  if (imagem) {
-    imagem.addEventListener('click', function () {
-      contadorCliques++;
+ if (imagem) {
+  imagem.addEventListener('click', function () {
+    contadorCliques++;
 
-      if (contadorCliques === 1) {
-        alert('Oi, tudo bem? Eu sou a simpática abelhinha do Programa A União Faz a Vida.');
-      } else if (contadorCliques === 2) {
-        alert('Que legal te conhecer! Seja bem vindo(a) ao nosso site!!!');
-      } else if (contadorCliques === 3) {
-        alert('Esse projeto foi realizado com muito carinho pelos integrantes de Informática da FCC.');
-      } else {
-        // Para cliques além do terceiro, repetir a última mensagem
-        alert('Esse projeto foi realizado com muito carinho pelos integrantes de Informática da FCC.');
-      }
-    });
+    if (contadorCliques === 1) {
+      Swal.fire('Oi, tudo bem?', 'Eu sou a simpática abelhinha do Programa A União Faz a Vida.', 'info');
+    } else if (contadorCliques === 2) {
+      Swal.fire('Que legal te conhecer!', 'Seja bem-vindo(a) ao nosso site!!!', 'success');
+    } else if (contadorCliques === 3) {
+      Swal.fire('Sobre o Projeto', 'Esse projeto foi realizado com muito carinho pelos integrantes de Informática da FCC.', 'info');
+    } else {
+      // Para cliques além do terceiro, repetir a última mensagem
+      Swal.fire('Sobre o Projeto', 'Esse projeto foi realizado com muito carinho pelos integrantes de Informática da FCC.', 'info');
+    }
+  });
   } else {
     console.log("Imagem com ID 'imagemvoadora' não foi encontrada.");
   }

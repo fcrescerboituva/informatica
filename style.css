@@ -11,7 +11,7 @@ body {
   color: #333;
   line-height: 1.6;
   padding: 20px;
-}
+} 
 
 .texto-estilizado {
     font-family: 'Arial', sans-serif;
@@ -24,14 +24,17 @@ body {
 
 
 .header-estilizado {
-    border: 4px solid #4A90E2; /* Cor azul suave */
-    border-radius: 15px;        /* Cantos arredondados */
+    border: 5px solid #4A90E2; /* Cor azul suave */
+    border-radius: 22px;        /* Cantos arredondados */
     padding: 20px;              /* Espaçamento interno */
     margin: 20px auto;          /* Espaço externo */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra externa */
+    box-shadow: 0 8px 25px rgba(1, 19, 64, 0.8); /* Sombra externa */
     background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Fundo suave */
     max-width: 1200px;          /* Limita largura em telas maiores */
+    
 }
+
+
 
 /* Manter responsividade da imagem */
 .imagem {
